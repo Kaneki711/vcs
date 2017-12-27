@@ -14,60 +14,51 @@ cl.loginResult()
 print "===[Login Success]==="
 
 
-helpMessage ="""
-┏━━ೋ• ❄ •ೋ━━━┓
-   ❁ ᴇxᴏʀᴄɪsᴛ sᴇʟғʙᴏᴛ❁    
-┗━━ೋ• ❄ •ೋ━━━┛
-🛡sᴇᴛᴛɪɴɢ ᴄᴍᴅ🛡
-✈[Url:on/off]
-✈[Autojoin:on/off]
-✈[Autocancel:on/off
-✈[Qr:on/off]
-✈[Autokick:on/off]
-✈[Contact:on/off]
-✈[Status]
-
-♻️sᴛᴇᴀʟ ᴄᴍᴅ♻️
-✈[Steal contact @{name}]
-✈[Steal mid @{name}]
-✈[Steal group pict]
-✈[Steal bio @{name}]
-✈[Steal cover @{name}]
-✈[Steal pict @{name}]
-
-☣️ᴍᴀʀᴋ ᴛᴏ ʟɪsᴛ ᴄᴍᴅ☣️
-✈[Ban @{name}]
-✈[Unban @{name}]
-✈[Ban {send contact}]
-✈[Unban {send contact}]
-✈[Banlist]
-✈[Kick @{name}]
-✈[Kill ban]
-✈[Spamcontact @{name}]
-✈[Copy @{name}]
-✈[Backup me]
-✈[Gn: {Text}]
-✈[Kick: {mid}
-✈[Invite: {mid}]
-
-☔ᴄʜᴀᴛ ʀᴇʟᴀᴛᴇᴅ☔
-✈[Wikipedia {text search}]
-✈[Music ]
-✈[.instagram {username}]
-✈[/say {text}]
-✈[Vidio {text search}]
-✈[Creator]
-✈[Ginfo]
-✈[Gcreator]
-✈[Glist]
-✈[Gurl]
-✈[Ourl/Curl]
-✈[Tagall]
-✈[Gift]
-✈[Welcome]
-✈[Speed]
-✈[Set]
-✈[Read]
+helpMessage ="""━━━━━━━━━━
+SELF STARBOT
+━━━━━━━━━━
+✪[Creator]
+✪[Ginfo]
+✪[Gcreator]
+✪[Glist]
+✪[Gurl]
+✪[Ourl/Curl]
+✪[Tagall]
+✪[Gift]
+✪[Welcome]
+✪[Set]
+✪[Read]
+✪[Url:on/off]
+✪[Autojoin:on/off]
+✪[Autocancel:on/off
+✪[Qr:on/off]
+✪[Autokick:on/off]
+✪[Contact:on/off]
+✪[Status]
+✪[Steal contact @{name}]
+✪[Steal mid @{name}]
+✪[Steal group pict]
+✪[Steal bio @{name}]
+✪[Steal cover @{name}]
+✪[Steal pict @{name}]
+✪[Ban @{name}]
+✪[Unban @{name}]
+✪[Ban {send contact}]
+✪[Unban {send contact}]
+✪[Banlist]
+✪[Kick @{name}]
+✪[Kill ban]
+✪[Spamcontact @{name}]
+✪[Copy @{name}]
+✪[Backup me]
+✪[Gn: {Text}]
+✪[Kick: {mid}
+✪[Invite: {mid}]
+✪[Wikipedia {text search}]
+✪[Music ]
+✪[.instagram {username}]
+✪[/say {text}]
+✪[Vidio {text search}]
 """
 
 mid = cl.getProfile().mid
@@ -292,7 +283,7 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': gCreator}
                 cl.sendMessage(msg)
-		cl.sendText(msg.to,"Itu Yang Buat Grup Ini")
+		cl.sendText(msg.to,"Itu pembuat Group")
 #--------------------------------------------------------
             elif msg.contentType == 16:
                 if wait["Timeline"] == True:
@@ -333,71 +324,71 @@ def bot(op):
                         gInviMids = [contact.mid for contact in X.invitee]
                         cl.cancelGroupInvitation(msg.to, gInviMids)
                     else:
-                        cl.sendText(msg.to,"No one is inviting")
+                        cl.sendText(msg.to,"「Prosses」\n「Status : Belum ada pending」")
                 else:
                     Cl.sendText(msg.to,"Can not be used outside the group")
 #--------------------------------------------------------
-            elif msg.text in ["Ourl","Url:on"]:
+            elif msg.text in ["Buka"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.preventJoinByTicket = False
                     cl.updateGroup(X)
-                    cl.sendText(msg.to,"Url Active")
+                    cl.sendText(msg.to,"「Prosses」\n「Status : Qr On」")
                 else:
                     cl.sendText(msg.to,"Can not be used outside the group")
 #--------------------------------------------------------
-            elif msg.text in ["Curl","Url:off"]:
+            elif msg.text in ["Tutup"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.preventJoinByTicket = True
                     cl.updateGroup(X)
-                    cl.sendText(msg.to,"Url inActive")
+                    cl.sendText(msg.to,"「Prosses」\nStatus : Qr Off")
 
                 else:
                     cl.sendText(msg.to,"Can not be used outside the group")
 #--------------------------------------------------------
             elif msg.text in ["Join on","Autojoin:on"]:
                 wait["AutoJoin"] = True
-                cl.sendText(msg.to,"AutoJoin Active")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Auto Join On」")
 
             elif msg.text in ["Join off","Autojoin:off"]:
                 wait["AutoJoin"] = False
-                cl.sendText(msg.to,"AutoJoin inActive")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Auto Join Off」")
 
 #--------------------------------------------------------
 	    elif msg.text in ["Autocancel:on"]:
                 wait["AutoCancel"] = True
-                cl.sendText(msg.to,"The group of people and below decided to automatically refuse invitation")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Auto Cancel On」")
 		print wait["AutoCancel"][msg.to]
 
 	    elif msg.text in ["Autocancel:off"]:
                 wait["AutoCancel"] = False
-                cl.sendText(msg.to,"Invitation refused turned off")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Auto Cancel Off」")
 		print wait["AutoCancel"][msg.to]
 #--------------------------------------------------------
-	    elif "Qr:on" in msg.text:
+	    elif "Qr on" in msg.text:
 	        wait["Qr"] = True
-	    	cl.sendText(msg.to,"QR Protect Active")
+	    	cl.sendText(msg.to,"「Prosses」\n「Status : Protection Qr On」")
 
-	    elif "Qr:off" in msg.text:
+	    elif "Qr off" in msg.text:
 	    	wait["Qr"] = False
-	    	cl.sendText(msg.to,"Qr Protect inActive")
+	    	cl.sendText(msg.to,"「Prosses」\n「Status : Protection Qr Off」")
 #--------------------------------------------------------
 	    elif "Autokick:on" in msg.text:
 		wait["AutoKick"] = True
-		cl.sendText(msg.to,"AutoKick Active")
+		cl.sendText(msg.to,"「Prosses」\n「Status : Protection Kick On」")
 
 	    elif "Autokick:off" in msg.text:
 		wait["AutoKick"] = False
-		cl.sendText(msg.to,"AutoKick inActive")
+		cl.sendText(msg.to,"「Prosses」\n「Status : Protection Kick Off」")
 #--------------------------------------------------------
             elif msg.text in ["K on","Contact:on"]:
                 wait["Contact"] = True
-                cl.sendText(msg.to,"Contact Active")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Contact On」")
 
             elif msg.text in ["K off","Contact:off"]:
                 wait["Contact"] = False
-                cl.sendText(msg.to,"Contact inActive")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Contact Off」")
 #--------------------------------------------------------
             elif msg.text in ["Status"]:
                 md = ""
@@ -1424,7 +1415,7 @@ def bot(op):
                        cl.sendText(g.mid,"Spam")
                        cl.sendText(g.mid,"Spam")
                        cl.sendText(g.mid,"Spam")
-                       cl.sendText(msg.to, "Done")
+                       cl.sendText(msg.to, "「Prosses」\n「Status : Spam Contact Sukses」")
                        print " Spammed !"
                        
 
@@ -1488,18 +1479,18 @@ def bot(op):
 		Mids = [contact.mid for contact in thisgroup[0].members]
 		mi_d = Mids[:33]
 		cl.findAndAddContactsByMids(mi_d)
-		cl.sendText(msg.to,"Success Add all")
+		cl.sendText(msg.to,"「Prosses」\n「Status : Add All Sukses」")
 #--------------------------------------------------------
 	    elif "Recover" in msg.text:
 		thisgroup = cl.getGroups([msg.to])
 		Mids = [contact.mid for contact in thisgroup[0].members]
 		mi_d = Mids[:33]
 		cl.createGroup("Recover", mi_d)
-		cl.sendText(msg.to,"Success recover")
+		cl.sendText(msg.to,"「Prosses」\n「Status : Suksess Recover」")
 #--------------------------------------------------------
 	    elif msg.text in ["Remove all chat"]:
 		cl.removeAllMessages(op.param2)
-		cl.sendText(msg.to,"Removed all chat")
+		cl.sendText(msg.to,"「Prosses」\n「Status : Remove Chat Sukses」")
 #--------------------------------------------------------
             elif ("Gn: " in msg.text):
                 if msg.toType == 2:
@@ -1507,7 +1498,7 @@ def bot(op):
                     X.name = msg.text.replace("Gn: ","")
                     cl.updateGroup(X)
                 else:
-                    cl.sendText(msg.to,"It can't be used besides the group.")
+                    cl.sendText(msg.to,"「Prosses」\n「Status : Rename Group Suksess」")
 #--------------------------------------------------------
             elif "Kick: " in msg.text:
                 midd = msg.text.replace("Kick: ","")
@@ -1530,13 +1521,13 @@ def bot(op):
 		gid = cl.getGroupIdsJoined()
 		for i in gid:
 		    cl.sendText(i,"[BROADCAST]\n"+bc+"\n#SorryBroadcast")
-		cl.sendText(msg.to,"Success BC BosQ")
+		cl.sendText(msg.to,"「Prosses」\n「Status : Broadcast Group Suksess」")
 #--------------------------------------------------------
             elif msg.text in ["Cancelall"]:
                 gid = cl.getGroupIdsInvited()
                 for i in gid:
                     cl.rejectGroupInvitation(i)
-                cl.sendText(msg.to,"All invitations have been refused")
+                cl.sendText(msg.to,"「Prosses」\n「Status : Cancel invite Suksess」")
 #--------------------------------------------------------
             elif msg.text in ["Gurl"]:
                 if msg.toType == 2:
@@ -1558,7 +1549,7 @@ def bot(op):
 		    url = cl.activity(limit=1)
 		    print url
 		    cl.like(url['result']['posts'][0]['userInfo']['mid'], url['result']['posts'][0]['postInfo']['postId'], likeType=1001)
-		    cl.comment(url['result']['posts'][0]['userInfo']['mid'], url['result']['posts'][0]['postInfo']['postId'], "Auto Liked By NyX\nSupported By ᴇxᴏʀᴄɪsᴛ ᴛᴇᴀᴍ ʙᴏᴛs")
+		    cl.comment(url['result']['posts'][0]['userInfo']['mid'], url['result']['posts'][0]['postInfo']['postId'], "Auto Like By STARBOT")
 		    cl.sendText(msg.to, "Success~")
 		except Exception as E:
 		    try:
@@ -1571,7 +1562,7 @@ def bot(op):
             elif msg.text in ["Speed","Sp"]:
               if msg.from_ in owner:
                 start = time.time()
-                cl.sendText(msg.to, "Wait...")
+                cl.sendText(msg.to, "「Prosses」\n「Status : Speedbot」")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%sDetik" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
@@ -1589,7 +1580,7 @@ def bot(op):
 		try:
 		    cl.updateDisplayPicture(profile.pictureStatus)
 		    cl.updateProfile(profile)
-		    cl.sendText(msg.to, "Berhasil Seperti Semula")
+		    cl.sendText(msg.to, "「Prosses」\n「Status : Backup Profile done」")
 		except Exception as e:
 		    cl.sendText(msg.to, str(e))
 #--------------------------------------------------------
@@ -1604,7 +1595,7 @@ def bot(op):
 		    cname = cl.getContact(contact.mid).displayName
 		    if cname == _name:
 			cl.CloneContactProfile(contact.mid)
-			cl.sendText(msg.to, "Berhasil Menjelma")
+			cl.sendText(msg.to, "「Prosses」\n「Status : Copy Profile done」")
 		    else:
 			pass
 		
